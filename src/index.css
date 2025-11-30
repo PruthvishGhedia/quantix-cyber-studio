@@ -8,40 +8,46 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 15% 12%;
+    --background: 228 33% 3%;
+    --background-layer-1: 225 29% 6%;
+    --background-layer-2: 220 29% 11%;
     --foreground: 210 40% 98%;
 
-    --card: 220 15% 15%;
+    --card: 225 29% 6%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 15% 15%;
+    --popover: 225 29% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 270 80% 65%;
+    --primary: 274 68% 48%;
+    --primary-glow: 274 73% 56%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 100% 55%;
+    --secondary: 192 71% 44%;
+    --secondary-glow: 192 67% 53%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 20%;
+    --muted: 220 29% 15%;
     --muted-foreground: 210 20% 65%;
 
-    --accent: 270 80% 65%;
+    --accent: 274 68% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 25%;
-    --input: 220 15% 20%;
-    --ring: 270 80% 65%;
+    --border: 220 29% 18%;
+    --input: 220 29% 12%;
+    --ring: 274 73% 56%;
 
     --radius: 0.5rem;
 
-    --neon-purple: 270 80% 65%;
-    --neon-blue: 195 100% 55%;
-    --cyber-glow: 270 80% 65%;
-    --grid-line: 220 15% 20%;
+    --neon-purple: 274 68% 48%;
+    --neon-purple-bright: 274 73% 56%;
+    --neon-blue: 192 71% 44%;
+    --neon-blue-bright: 192 67% 53%;
+    --cyber-glow: 274 68% 48%;
+    --grid-line: 220 29% 12%;
   }
 }
 
@@ -53,14 +59,16 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(ellipse at top, hsl(var(--primary) / 0.03) 0%, hsl(var(--background)) 50%),
+                radial-gradient(ellipse at bottom right, hsl(var(--secondary) / 0.02) 0%, hsl(var(--background)) 50%);
   }
 
   .glow-purple {
-    box-shadow: 0 0 20px hsl(var(--neon-purple) / 0.5);
+    box-shadow: 0 0 25px hsl(var(--neon-purple-bright) / 0.4), 0 0 50px hsl(var(--neon-purple) / 0.2);
   }
 
   .glow-blue {
-    box-shadow: 0 0 20px hsl(var(--neon-blue) / 0.5);
+    box-shadow: 0 0 25px hsl(var(--neon-blue-bright) / 0.4), 0 0 50px hsl(var(--neon-blue) / 0.2);
   }
 
   .hover-glow {
@@ -68,7 +76,7 @@ All colors MUST be HSL.
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 30px hsl(var(--cyber-glow) / 0.6);
+    box-shadow: 0 0 35px hsl(var(--neon-purple-bright) / 0.5), 0 0 60px hsl(var(--cyber-glow) / 0.3);
     transform: translateY(-2px);
   }
 
@@ -90,7 +98,7 @@ All colors MUST be HSL.
   }
 
   .cyber-card:hover {
-    border-color: hsl(var(--neon-purple) / 0.5);
-    box-shadow: 0 0 20px hsl(var(--neon-purple) / 0.3);
+    border-color: hsl(var(--neon-purple-bright) / 0.6);
+    box-shadow: 0 0 25px hsl(var(--neon-purple-bright) / 0.3), 0 0 50px hsl(var(--neon-purple) / 0.15);
   }
 }
