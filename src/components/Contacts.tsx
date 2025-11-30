@@ -21,7 +21,7 @@ const Contacts = () => {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Pruthvish Ghedia",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/pruthvishghedia/",
       color: "primary",
     },
     {
